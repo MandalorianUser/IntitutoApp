@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#0d47a1</color>
+    <color name="colorPrimaryDark">#2c3e50</color>
+    <color name="colorSecondary">#2980B9</color>
+    <color name="gisclaro">#E6EAED</color>
+    <color name="colorSecondaryDark">#0d47a1</color>
+    <color name="white">#FFFFFF</color>
+    <color name="blueMateDark">#2c3e50</color>
+    <color name="negro">#000000</color>
+    <color name="grisclaro">#70A8A4A4</color>
+    <color name="negro_trasnparente">#22000000</color>
+    <color name="colorSecondary_trasnparent">#2D2980B9</color>
+    <color name="lblNormal">#ffffff</color>
+    <color name="negro_nigth">#1b1b1b</color>
+</resources>

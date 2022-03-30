@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">Instituto Aprender Para la Vida</string>
+    <string name="txtid">Usuario</string>
+    <string name="txtpassword">Contraseña</string>
+    <string name="txtpasswordConfirm">Confirmar contraseña</string>
+    <string name="btnIniciarSecion">Iniciar sesión</string>
+    <string name="nombre">Nombre</string>
+    <string name="apellidos">Apellidos</string>
+    <string name="title_activity_padre_login">padre_login</string>
+    <string name="btnMaestro">Maestro</string>
+    <string name="btnPadre">Padre</string>
+    <string name="lblBienvenidoPadre">Bienvenido Padre</string>
+    <string name="bntIniciar">Iniciar Sesión</string>
+    <string name="btnRegistrar">Registrarse</string>
+    <string name="txtId">ID</string>
+    <string name="txtPass">Contraseña</string>
+    <string name="txtRegistro">Por favor, Registrese!</string>
+    <string name="id_institucional">Id Institucional</string>
+    <string name="title_activity_reporte_activity">reporte_activity</string>
+    <string name="Id_ALumno">Id Alumno</string>
+    <string name="Reporte_Institucional">Academico</string>
+    <string name="Reporte_Conducta">Diciplinario</string>
+    <string name="Tipo_reporte">Tipo de Reporte</string>
+    <string name="fecha">Fecha</string>
+    <string name="Descripcion">Descripcion</string>
+    <string name="Reportar">Reportar</string>
+    <string name="Reportes">Reportes</string>
+    <string name="Email">Email</string>
+    <string name="Foto_Perfil">Seleccionar foto!</string>
+    <string name="imgDescripction">TODO</string>
+    <string name="itemMenuCerrarSesion">Cerrar Sesión</string>
+    <string name="lblGrupos">Grupos</string>
+    <string name="txtGrupo">Grupo</string>
+    <string name="lblTituloBienvenidoProfesor">Bienvenido Profesor</string>
+    <string name="lblAlumnos">Alumnos</string>
+    <string name="lblBienvenido_Maestro">Bienvenido Maestro</string>
+    <string name="lblbienvenido">Bienvenido</string>
+    <string name="txtNoHayConexión">Revisar Conexión</string>
+    <string name="bienvenido_maestro">Bienvenido Maestro</string>
+    <string name="lbl_fecha_reporte">Fecha Reporte</string>
+
+    <string-array name="Urgencias">
+        <item>Baja</item>
+        <item>Normal</item>
+        <item>Urgente</item>
+    </string-array>
+</resources>

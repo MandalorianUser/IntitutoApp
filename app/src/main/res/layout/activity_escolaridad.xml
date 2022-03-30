@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/negro_nigth"
+    android:layout_height="match_parent"
+    tools:context=".activity_escolaridad">
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/btnAtrasEscolaridadActivity"
+        app:civ_circle_background_color="@color/white"
+        app:theme="@style/btnAtras"
+        android:src="@drawable/ic_backbutton"
+        app:srcCompat="@drawable/ic_backbutton"
+        android:layout_height="40dp"
+        android:layout_margin="5dp"
+        android:elevation="5dp"
+        android:layout_width="40dp"
+        tools:ignore="VectorDrawableCompat" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+
+        android:orientation="vertical">
+
+
+        <com.github.florent37.shapeofview.shapes.ArcView
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:elevation="4dp"
+            android:background="@color/colorPrimary"
+
+            app:shape_arc_height="20dp"
+            app:shape_arc_position="bottom"
+            >
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorSecondaryDark"/>
+            <!-- YOUR CONTENT -->
+
+        </com.github.florent37.shapeofview.shapes.ArcView>
+    </LinearLayout>
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="Escolaridad"
+        android:layout_marginTop="30dp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:layout_gravity="center_horizontal"
+        android:textSize="34sp"/>
+    <GridLayout
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="60dp"
+        android:columnCount="2"
+        android:rowCount="2">
+        <!-- A CardView that contains a TextView -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_preescolar"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_row="0"
+            android:layout_rowWeight="1"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:layout_margin="8dp"
+            app:cardElevation="8dp"
+            app:cardCornerRadius="8dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/targetEscolaridad_imgWidth"
+                    android:layout_height="@dimen/targetEscolaridad_imgHeigth"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="5dp"
+
+                    app:srcCompat="@drawable/ic_prescolar" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:layout_marginTop="5dp"
+                    android:text="Prescolar"
+                    android:textSize="20sp" />
+
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- A CardView that contains a TextView -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_primaria"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_row="0"
+            android:layout_rowWeight="1"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:layout_margin="8dp"
+            app:cardElevation="8dp"
+            app:cardCornerRadius="8dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/targetEscolaridad_imgWidth"
+                    android:layout_height="@dimen/targetEscolaridad_imgHeigth"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="5dp"
+                    app:srcCompat="@drawable/ic_primary" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:layout_marginTop="5dp"
+                    android:text="Primaria"
+                    android:textSize="20sp" />
+
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- A CardView that contains a TextView -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_secundaria"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_row="1"
+            android:layout_rowWeight="1"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:layout_margin="8dp"
+            app:cardElevation="8dp"
+
+            app:cardCornerRadius="8dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/targetEscolaridad_imgWidth"
+                    android:layout_height="@dimen/targetEscolaridad_imgHeigth"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="5dp"
+                    app:srcCompat="@drawable/ic_secundaria" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:layout_marginTop="5dp"
+                    android:text="Secundaria"
+                    android:textSize="20sp" />
+
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <!-- A CardView that contains a TextView -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_preparatoria"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_row="1"
+            android:layout_rowWeight="1"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:layout_margin="8dp"
+            app:cardElevation="8dp"
+            app:cardCornerRadius="8dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/targetEscolaridad_imgWidth"
+                    android:layout_height="@dimen/targetEscolaridad_imgHeigth"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="5dp"
+                    app:srcCompat="@drawable/ic_preparatoria" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:layout_marginTop="5dp"
+                    android:text="Preparatoria"
+                    android:textSize="20sp" />
+
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+
+    </GridLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

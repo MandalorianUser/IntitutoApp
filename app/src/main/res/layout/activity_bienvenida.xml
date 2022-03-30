@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity_bienvenida">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:elevation="7dp"
+
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:textAlignment="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text='"Hacer'
+            android:textColor="@color/white"
+            android:textSize="50sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="-20dp"
+            android:fontFamily="cursive"
+            android:text="Siempre"
+            android:textColor="@color/white"
+            android:textSize="50sp"
+
+            android:textStyle="bold"
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="-20dp"
+            android:text="y en todo"
+            android:textColor="@color/white"
+
+            android:textSize="50sp"
+
+
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="-20dp"
+                android:fontFamily="cursive"
+                android:text='lo mejor'
+                android:textColor="@color/white"
+                android:textSize="50sp"
+
+                android:textStyle="bold"
+
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="-5dp"
+                android:layout_marginTop="-20dp"
+                android:text='"'
+                android:textColor="@color/white"
+                android:textSize="50sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom"
+        android:elevation="1dp"
+        android:scaleType="centerCrop"
+        android:scrollX="-200dp"
+
+        android:src="@drawable/fondoapp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/back_height"
+        android:elevation="0dp"
+        android:gravity="center_vertical" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:backgroundTint="@android:color/transparent"
+
+        android:elevation="6dp"
+        android:gravity="center_vertical">
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_margin="10dp"
+            android:alpha=".8"
+            android:background="@drawable/rounded"
+            android:orientation="vertical">
+
+
+            <Button
+                android:id="@+id/btnMaestro"
+                style="@style/boton"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/boton_height"
+                android:background="@drawable/rounded_button"
+                android:backgroundTint="@color/colorSecondaryDark"
+                android:text="@string/btnMaestro"
+                android:textColor="@android:color/white"
+                app:backgroundTint="@color/colorSecondaryDark" />
+
+            <Button
+                android:id="@+id/btnPadre"
+                style="@style/boton"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/boton_height"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/rounded_button"
+
+                android:backgroundTint="@color/white"
+                android:text="@string/btnPadre"
+                android:textColor="@android:color/white"
+                app:backgroundTint="@color/colorSecondaryDark" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:elevation="10dp"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:elevation="10dp"
+            android:text="Instituto"
+            android:textColor="@color/negro"
+            android:textSize="40sp"
+
+            />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:elevation="10dp"
+            android:src="@drawable/logo_instituto__convertido_" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Aprender para la Vida"
+            android:textColor="@color/negro"
+            android:textSize="40sp" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.6"
+        android:background="@drawable/back_gradient"
+        android:elevation="5dp"
+        app:layout_anchor="@+id/imageView"
+        app:layout_anchorGravity="center" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

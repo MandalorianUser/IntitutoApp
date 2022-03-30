@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <androidx.cardview.widget.CardView
+        android:id="@+id/item_reporte_cardView"
+        android:layout_width="match_parent"
+        android:layout_margin="5dp"
+        android:layout_height="@dimen/item_Reporte_heigth"
+        android:backgroundTint="@color/grisclaro">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/item_reporte_imgAlumnoReportado"
+                android:layout_margin="5dp"
+                android:layout_width="@dimen/itemReporte_img_width"
+                android:layout_height="@dimen/itemReporte_img_heigth"
+
+                android:background="@drawable/roundedbuttonoutline"
+                app:srcCompat="@drawable/ic_primary"
+
+                />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:textSize="@dimen/itemReporte_txtZize"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/item_reporte_lblIdAlumnoReportado"
+                    android:text="Alumno Reportado"
+                    />
+                <TextView
+                    android:layout_marginTop="@dimen/itemReporte_txtMargin"
+                    android:textSize="@dimen/itemReporte_txtZize"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/item_reporte_lblStatusReporte"
+                    android:text="Estatus Reporte"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/item_reporte_lblFecha"
+                    android:textSize="21sp"
+                    android:layout_marginTop="@dimen/itemReporte_txtMargin"
+                    android:text="@string/lbl_fecha_reporte"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

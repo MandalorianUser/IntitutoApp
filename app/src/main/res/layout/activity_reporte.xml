@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/negro_nigth"
+    android:fitsSystemWindows="true"
+    tools:context=".activity_reporte">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.github.florent37.shapeofview.shapes.DiagonalView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:elevation="4dp"
+            app:shape_diagonal_angle="10"
+
+            app:shape_diagonal_position="bottom">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/btnAtrasReporteActivity"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="5dp"
+                android:elevation="5dp"
+                android:src="@drawable/ic_backbutton"
+                app:civ_circle_background_color="@color/white"
+                app:srcCompat="@drawable/ic_backbutton"
+                app:theme="@style/btnAtras"
+                tools:ignore="VectorDrawableCompat" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorSecondaryDark" />
+
+        </com.github.florent37.shapeofview.shapes.DiagonalView>
+
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/txt_tituloReporte_marginTop"
+        android:text="@string/Reportes"
+        android:textColor="@android:color/white"
+        android:textSize="36sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/FotoPerfil"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/imgLogo_heigth"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/imgLogo_marginTop"
+        android:backgroundTint="@color/grisclaro"
+        app:srcCompat="@drawable/report_img" />
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="120dp"
+
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="5">
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                app:endIconMode="clear_text"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="6">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtReporteIdALumno"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/Id_ALumno"
+                    android:inputType="textPersonName" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageView
+                android:layout_marginTop="4dp"
+                android:id="@+id/btnBuscar"
+                android:layout_width="54dp"
+                android:layout_height="@dimen/btn_seleccionarimg"
+                app:srcCompat="@drawable/ic_search"
+
+                app:tint="@color/lblNormal" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.28"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/Tipo_reporte"
+                    android:textAppearance="@style/lblTitulo"
+                    android:textColor="@color/lblNormal"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <RadioButton
+                        android:layout_marginTop="-5dp"
+                        android:id="@+id/radioButtonDiciplinario"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".5"
+                        android:text="@string/Reporte_Conducta" />
+
+                    <RadioButton
+                        android:layout_marginTop="-5dp"
+
+                        android:id="@+id/radioButtonAcademico"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".5"
+                        android:text="@string/Reporte_Institucional" />
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.8"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="center"
+                    android:text="Urgencia"
+                    android:textAppearance="@style/lblTitulo"
+                    android:textColor="@color/lblNormal"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+
+                <com.google.android.material.textfield.TextInputLayout
+
+                    android:id="@+id/txtLayoutUrgenciaReporte"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/txtAutocompleteLayoutUrgenciaReporte"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="5dp"
+                        android:hint="Seleccione una opcion"
+                        android:inputType="none" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtDescripcion"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/txt_descripcion_heigth"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:gravity="start|top"
+                android:hint="@string/Descripcion"
+                android:inputType="textMultiLine" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/btnReportarAlumno"
+        style="@style/boton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+
+        android:layout_marginBottom="10dp"
+        android:text="@string/Reportar"
+        android:textColorLink="@color/white"
+        tools:text="@string/Reportar" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

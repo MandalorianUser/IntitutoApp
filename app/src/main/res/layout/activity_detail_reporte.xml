@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/negro_nigth"
+    android:fitsSystemWindows="true"
+    tools:context=".activity_detail_reporte">
+
+    <include layout="@layout/toolbar" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/img_urgencia_reporte"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_gravity="top|center"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/undraw_teacher"
+        tools:ignore="VectorDrawableCompat" />
+
+    <LinearLayout
+        android:layout_below="@+id/img_urgencia_reporte"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:textAlignment="center">
+
+        <TextView
+            android:id="@+id/DetailActivitylblTituloReporte"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Titulo Notificacion"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/DetailActivitylblDetalleReporte"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:text="Detalle notificacion"
+            android:textAlignment="center"
+            android:textSize="22sp" />
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:text="Reporte Elaborado por" />
+
+        <TextView
+            android:gravity="center"
+            android:id="@+id/DetailActivitylblMaestro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:text="Maestro"
+            android:textAlignment="center"
+            android:textSize="22sp"
+
+            />
+
+        <TextView
+            android:id="@+id/DetailActivitylblFecha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:text="Fecha"
+            android:textSize="20sp" />
+
+
+
+            <ImageView
+                android:id="@+id/ic_warningDetailReporte"
+                android:layout_marginTop="5dp"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_warning" />
+
+            <TextView
+                android:gravity="center"
+                android:id="@+id/DetailActivitylblUrgencia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:text="Urgencia"
+                android:textAlignment="center"
+                android:textSize="22sp"
+
+                />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_alignParentBottom="true"
+        android:textSize="22sp">
+
+        <Button
+            android:id="@+id/btnNotificationReadedDetailActivity"
+            style="@style/boton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:drawableRight="@drawable/ic_visto"
+
+            android:text="Notificar Enterado" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

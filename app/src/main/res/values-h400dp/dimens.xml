@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    //GENERALES
+    <dimen name="GeneralMargin">10dp</dimen>
+    <dimen name="back_height">260dp</dimen>
+    <dimen name="lbl_titulo">34sp</dimen>
+    <dimen name="form_login_margintop">70dp</dimen>
+    //BOTONES
+    <dimen name="boton_width">160dp</dimen>
+    <dimen name="boton_height">50dp</dimen>
+    <dimen name="fontZ_button">16sp</dimen>
+    <dimen name="btnMargin">32dp</dimen>
+
+
+    <dimen name="btn_seleccionarimg">35dp</dimen>
+    //IMAGENES
+    <dimen name="img_width">220dp</dimen>
+    <dimen name="img_height">220dp</dimen>
+    <dimen name="imgLogo_heigth">250dp</dimen>
+
+
+    //TEXT INPUTS
+    <dimen name="margin_txt_input">10dp</dimen>
+    <dimen name="txt_inputs">12sp</dimen>
+    <dimen name="form_heigth">300dp</dimen>
+    <dimen name="formRegistromarginBottom">75dp</dimen>
+</resources>

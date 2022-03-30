@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "113249000891",
+    "firebase_url": "https://instituto-app.firebaseio.com",
+    "project_id": "instituto-app",
+    "storage_bucket": "instituto-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:113249000891:android:802b3a6ec12d60993af89e",
+        "android_client_info": {
+          "package_name": "com.example.instituto_para_la_vida"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "113249000891-0ev55rvu3amt2kqbtnheht76645hirfd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASjNwR3FNhWngPnkWobdrW9db7z3SrJs4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "113249000891-0ev55rvu3amt2kqbtnheht76645hirfd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:113249000891:android:78bd30fd02d5857b3af89e",
+        "android_client_info": {
+          "package_name": "com.example.institutoapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "113249000891-0ev55rvu3amt2kqbtnheht76645hirfd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASjNwR3FNhWngPnkWobdrW9db7z3SrJs4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "113249000891-0ev55rvu3amt2kqbtnheht76645hirfd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:113249000891:android:0a117ec8bd80658e3af89e",
+        "android_client_info": {
+          "package_name": "com.example.login"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "113249000891-0ev55rvu3amt2kqbtnheht76645hirfd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASjNwR3FNhWngPnkWobdrW9db7z3SrJs4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "113249000891-0ev55rvu3amt2kqbtnheht76645hirfd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

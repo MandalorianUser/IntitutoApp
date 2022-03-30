@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/negro_nigth"
+    tools:context=".Padres.activity_LoginPadre">
+
+    <com.github.florent37.shapeofview.shapes.ArcView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/back_height"
+        android:elevation="1dp"
+        app:shape_arc_position="bottom"
+        app:shape_arc_height="20dp"
+        android:layout_gravity="top">
+
+        <View
+            android:elevation="1dp"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/back_height"
+            android:background="@color/colorSecondaryDark" />
+
+    </com.github.florent37.shapeofview.shapes.ArcView>
+
+
+        <RelativeLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:elevation="2dp">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:elevation="2dp"
+                android:text="@string/lblBienvenidoPadre"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/lbl_titulo"
+                android:textStyle="bold" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgLogoMaestro2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/img_height"
+                android:layout_below="@+id/textView"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="60dp"
+                android:src="@drawable/father_img" />
+
+        </RelativeLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:padding="5dp"
+        android:layout_marginTop="@dimen/form_login_margintop">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:hintTextColor="@color/colorSecondary"
+            app:endIconMode="clear_text"
+            app:startIconDrawable="@drawable/ic_email"
+            android:layout_marginBottom="5dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtLoginPadreEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/Email"
+                android:inputType="textEmailAddress"
+               />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            app:hintTextColor="@color/colorSecondary"
+
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:startIconDrawable="@drawable/ic_lock"
+            app:passwordToggleEnabled="true">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtPassLoginPadre"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:inputType="textPassword"
+
+                android:hint="@string/txtPass" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+
+    </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="@dimen/GeneralMargin"
+            android:padding="5dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnLoginRegistrarPadre"
+                style="@style/boton"
+                android:layout_weight="1"
+                android:layout_marginLeft="@dimen/GeneralMargin"
+                android:layout_marginRight="@dimen/GeneralMargin"
+                android:layout_width="@dimen/boton_width"
+                android:layout_height="@dimen/boton_height"
+                android:background="@drawable/rounded_button"
+                android:text="@string/btnRegistrar"
+                android:textColor="@android:color/white"
+                app:backgroundTint="@color/colorSecondary" />
+
+            <Button
+                android:id="@+id/btnLoginIniciarSesionPadre"
+                style="@style/boton"
+                android:layout_marginRight="@dimen/GeneralMargin"
+                android:layout_marginLeft="@dimen/GeneralMargin"
+                android:layout_width="@dimen/boton_width"
+                android:layout_height="@dimen/boton_height"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_button"
+                android:text="@string/btnIniciarSecion"
+                android:textColor="@android:color/white"
+                app:backgroundTint="@color/colorSecondary" />
+
+        </LinearLayout>
+
+
+
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

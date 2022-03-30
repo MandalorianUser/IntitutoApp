@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="@color/negro_nigth"
+    tools:context=".activity_alumnos_grupo">
+
+
+    <RelativeLayout
+        android:id="@+id/cabecera"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:elevation="1dp"
+        android:layout_below="@+id/Toolbar"
+
+        android:orientation="vertical">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/btnAtrasGruposActivity"
+            app:civ_circle_background_color="@color/white"
+            app:theme="@style/btnAtras"
+            android:src="@drawable/ic_backbutton"
+            app:srcCompat="@drawable/ic_backbutton"
+            android:layout_height="40dp"
+            android:layout_margin="5dp"
+            android:elevation="5dp"
+            android:layout_width="40dp"
+            tools:ignore="VectorDrawableCompat" />
+
+        <com.github.florent37.shapeofview.shapes.ArcView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary"
+            android:elevation="1dp"
+
+            app:shape_arc_height="20dp"
+            app:shape_arc_position="bottom">
+
+            <View
+                android:id="@+id/cabeceraView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimaryDark"
+                android:elevation="1dp" />
+            <!-- YOUR CONTENT -->
+
+        </com.github.florent37.shapeofview.shapes.ArcView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="60dp"
+            android:text="@string/lblAlumnos"
+
+            android:textColor="@color/white"
+            android:textSize="34sp"
+            android:elevation="5dp"
+            android:id="@+id/lblActivityGrupos"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Grupo"
+            android:id="@+id/lblNombreGrupoRecyclerView"
+            android:layout_below="@id/lblActivityGrupos"
+            android:elevation="2dp"
+            android:textColor="@color/white"
+            android:layout_centerInParent="true"
+            android:textSize="24sp"
+            android:layout_marginTop="5dp"
+            />
+    </RelativeLayout>
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+
+        android:id="@+id/RecyclerViewAlumnosGrupo"
+        android:layout_width="match_parent"
+        android:layout_height="550dp"
+
+        android:layout_below="@+id/cabecera"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="5dp" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

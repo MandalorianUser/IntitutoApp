@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/negro_nigth"
+    android:layout_height="match_parent"
+    tools:context=".maestros.activity_LoginMaestro">
+    <RelativeLayout
+
+
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textAlignment="center"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="@string/bienvenido_maestro"
+            android:elevation="5dp"
+            android:layout_centerInParent="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:textSize="@dimen/lbl_titulo"
+
+
+            />
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imgMaestroLogin"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/imgLogo_heigth"
+            android:layout_marginTop="70dp"
+            android:elevation="6dp"
+            android:src="@drawable/undraw_teacher"
+            app:srcCompat="@drawable/undraw_teacher"
+            tools:ignore="VectorDrawableCompat" />
+        <LinearLayout
+            android:id="@+id/layout_cabecera"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.github.florent37.shapeofview.shapes.ArcView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/back_height"
+                android:layout_gravity="top"
+                android:elevation="4dp"
+                app:shape_arc_height="20dp"
+                app:shape_arc_position="bottom">
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/back_height"
+                    android:background="@color/colorSecondaryDark" />
+
+            </com.github.florent37.shapeofview.shapes.ArcView>
+
+            </LinearLayout>
+
+
+
+
+
+
+            <LinearLayout
+                android:id="@+id/formLoginMaestro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imgMaestroLogin"
+                android:padding="5dp"
+                android:layout_marginTop="@dimen/form_login_margintop"
+                android:orientation="vertical">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:hintTextColor="@color/colorSecondary"
+                    android:layout_width="match_parent"
+                    app:endIconMode="clear_text"
+                    app:startIconDrawable="@drawable/ic_email"
+                    android:layout_marginBottom="5dp"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtLoginMaestroEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:ems="10"
+                        android:hint="@string/Email"
+                        android:inputType="textEmailAddress" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:hintTextColor="@color/colorSecondary"
+                    android:layout_width="match_parent"
+                    app:startIconDrawable="@drawable/ic_lock"
+                    android:layout_height="wrap_content"
+
+                    app:passwordToggleEnabled="true">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtPassLoginMaestro"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/txtPass"
+                        android:inputType="textPassword" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+
+
+
+
+        </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_gravity="bottom"
+        android:weightSum="2"
+        android:orientation="horizontal">
+
+        <Button
+            style="@style/boton"
+            android:layout_margin="@dimen/GeneralMargin"
+            android:layout_weight="1"
+            android:id="@+id/btnRegristarseMaestro"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/boton_height"
+            android:background="@drawable/rounded_button"
+            android:text="@string/btnRegistrar"
+            android:textColor="@android:color/white" />
+
+        <Button
+            style="@style/boton"
+            android:layout_margin="@dimen/GeneralMargin"
+            android:id="@+id/btnIniciarSesionMaestro"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/boton_height"
+            android:background="@drawable/rounded_button"
+            android:text="@string/btnIniciarSecion"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+
+

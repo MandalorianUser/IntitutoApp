@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    //GENERALES
+    <dimen name="form_heigth">300dp</dimen>
+    <dimen name="formRegistromarginBottom">140dp</dimen>
+
+    //TEXT INPUTS
+    <dimen name="margin_txt_input">10dp</dimen>
+    <dimen name="txt_inputs">14sp</dimen>
+    <dimen name="txt_heigth">20dp</dimen>
+    <dimen name="item_Reporte_heigth">120dp</dimen>
+    <dimen name="itemReporte_img_heigth">80dp</dimen>
+    <dimen name="itemReporte_img_width">80dp</dimen>
+    <dimen name="itemReporte_txtZize">21sp</dimen>
+    <dimen name="itemReporte_txtMargin">5dp</dimen>
+    <dimen name="txt_descripcion_heigth">120dp</dimen>
+    <dimen name="imgLogo_marginTop">128dp</dimen>
+    <dimen name="txt_tituloReporte_marginTop">50dp</dimen>
+
+
+    //IMAGENES
+    <dimen name="img_width">220dp</dimen>
+    <dimen name="img_height">220dp</dimen>
+    <dimen name="imgLogo_heigth">220dp</dimen>
+    <dimen name="targetEscolaridad_imgWidth">150dp</dimen>
+    <dimen name="targetEscolaridad_imgHeigth">250dp</dimen>
+
+    //BOTONES
+    <dimen name="boton_width">160dp</dimen>
+    <dimen name="boton_height">50dp</dimen>
+    <dimen name="fontZ_button">16sp</dimen>
+    <dimen name="btnMargin">32dp</dimen>
+
+
+
+</resources>
