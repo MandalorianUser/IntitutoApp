@@ -28,6 +28,17 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
             android:src="@drawable/undraw_teacher" />
+        <TextView
+            android:id="@+id/txtDetalleHijoNombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nombre del Hijo"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:textSize="18sp"
+            />
 
         <LinearLayout
 
@@ -93,6 +104,7 @@
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/RecyclerViewDetalleHijo"
         android:layout_width="match_parent"
         android:layout_height="450dp"
         android:layout_gravity="bottom"

@@ -64,26 +64,26 @@ public class RecyclerViewAdapterHijosPersonalizado extends RecyclerView.Adapter<
     public void onBindViewHolder(@NonNull RecyclerViewAdapterHijosPersonalizado.ViewHolderAlumnos holder, int position) {
         holder.txtGrupoItemALumnoP.setText(alumnList.get(position).getGrupo());
         holder.txtAlumnoItemAlumnoP.setText(alumnList.get(position).getNombre());
-
-        a.setId(alumnList.get(position).getId());
-        a.setPadre_id(alumnList.get(position).getPadre_id());
-        a.setGrupo(alumnList.get(position).getGrupo());
-        a.setImg(alumnList.get(position).getImg());
+        AlumnoModelo hijo = new AlumnoModelo();
+        hijo = alumnList.get(position);
         String url = alumnList.get(position).getImg();
+
         Glide.with(mContext)
                 .load(url)
+                .error(R.drawable.ic_user)
                 .into(holder.imgAlumnoItemAlumnoP);
 
+        AlumnoModelo finalHijo = hijo;
         holder.cardViewItemAlumnoP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               detailALumn(a);
+               detailALumn(finalHijo);
             }
         });
         holder.btnDetallesItemALumnoP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                detailALumn(a);
+                detailALumn(finalHijo);
             }
         });
 
@@ -98,7 +98,10 @@ public class RecyclerViewAdapterHijosPersonalizado extends RecyclerView.Adapter<
     public void detailALumn(AlumnoModelo a){
         Intent i = new Intent(mContext, activity_hijo_detalle.class);
         i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        i.putExtra("Alumno",  a);
+        i.putExtra("hijoExtra",a);
+        System.out.println("------------------------------------------");
+        System.out.println("Desde el recycler "+a.toString());
+        System.out.println("------------------------------------------");
         mContext.startActivity(i);
     }
 }
