@@ -116,7 +116,7 @@ public class activity_reporte extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String idAlumnoSearch = txtIdAlumno.getText().toString().trim();
-                if (!idAlumnoSearch.equals("") | !idAlumnoSearch.isEmpty()) {
+                if (!idAlumnoSearch.equals("") | !idAlumnoSearch.isEmpty() | idAlumnoSearch.toString().length()>2) {
                     mAlumnoProvider.getUser(idAlumnoSearch).addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {

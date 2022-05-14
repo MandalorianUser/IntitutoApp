@@ -138,11 +138,7 @@ public class activity_principal_padre extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
 
-    }
 
     private void listarHijos(String hijosPadre) {
         String[] hijos =  hijosPadre.split("-");
