@@ -73,6 +73,12 @@ public class activity_reporte extends AppCompatActivity {
     private String fechaActual = df.format(fecha);
     private AutoCompleteTextView txtUrgencia;
 
+    private Button btnReportar;
+    private CircleImageView btnAtras;
+    private AutoCompleteTextView dropMenu;
+    private String[] opciones = {"Baja", "Normal", "Urgente"};;
+    private   ArrayAdapter<String> adapter;
+
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
@@ -80,27 +86,31 @@ public class activity_reporte extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reporte);
         alumnoModelo = new AlumnoModelo();
+
         toastHelper = new ToastHelper();
+        mAuthProvider = new AuthProvider();
+        mTokenProvider = new TokenProvider();
+        mPadreProvider = new PadreProvider();
         mAlumnoProvider = new AlumnoProvider();
+        mNotificationProvider = new NotificationProvider();
+
+
         txtIdAlumno = findViewById(R.id.txtReporteIdALumno);
         txtDescripcion = findViewById(R.id.txtDescripcion);
         rdbtnAcademico = findViewById(R.id.radioButtonAcademico);
         rdbtnDiciplinario = findViewById(R.id.radioButtonDiciplinario);
-        mNotificationProvider = new NotificationProvider();
-        mAuthProvider = new AuthProvider();
-        mTokenProvider = new TokenProvider();
-        mPadreProvider = new PadreProvider();
+
         reporteModelo = new ReporteModelo();
         mReporteProvider = new ReporteProvider();
         mGenerateId = new GeneratorId();
         int urgencias = R.array.Urgencias;
 
-        txtUrgencia =  findViewById(R.id.txtAutocompleteLayoutUrgenciaReporte);
-        Button btnReportar = findViewById(R.id.btnReportarAlumno);
-        CircleImageView btnAtras = findViewById(R.id.btnAtrasReporteActivity);
-        AutoCompleteTextView dropMenu = findViewById(R.id.txtAutocompleteLayoutUrgenciaReporte);
-        String[] opciones =  {"Baja", "Normal","Urgente"};
-        ArrayAdapter<String>adapter = new ArrayAdapter<String>(this,R.layout.dropdown_item,opciones);
+        txtUrgencia = findViewById(R.id.txtAutocompleteLayoutUrgenciaReporte);
+        btnReportar = findViewById(R.id.btnReportarAlumno);
+        btnAtras = findViewById(R.id.btnAtrasReporteActivity);
+        dropMenu = findViewById(R.id.txtAutocompleteLayoutUrgenciaReporte);
+
+        adapter = new ArrayAdapter<String>(this, R.layout.dropdown_item, opciones);
         dropMenu.setAdapter(adapter);
 
         btnAtras.setOnClickListener(new View.OnClickListener() {
@@ -112,11 +122,13 @@ public class activity_reporte extends AppCompatActivity {
             }
         });
         ImageView btnBuscar = (ImageView) findViewById(R.id.btnBuscar);
+
+
         btnBuscar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String idAlumnoSearch = txtIdAlumno.getText().toString().trim();
-                if (!idAlumnoSearch.equals("") | !idAlumnoSearch.isEmpty() | idAlumnoSearch.toString().length()>2) {
+                if (!idAlumnoSearch.equals("") | !idAlumnoSearch.isEmpty() | idAlumnoSearch.toString().length() > 2) {
                     mAlumnoProvider.getUser(idAlumnoSearch).addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -136,7 +148,7 @@ public class activity_reporte extends AppCompatActivity {
                                         Toast.makeText(activity_reporte.this, "Error al obtener el id del padre", Toast.LENGTH_SHORT).show();
                                     }
                                 });
-                            }else{
+                            } else {
                                 Toast.makeText(getApplicationContext(), "Introduzca una matricula valida", Toast.LENGTH_SHORT).show();
                             }
                         }
@@ -202,9 +214,9 @@ public class activity_reporte extends AppCompatActivity {
                         data.put("gravedad", reporteModelo.getGravedad());
                         data.put("fecha", fechaActual);
                         data.put("tipoReporte", tipoReporte);
-                        data.put("idPadre",padreId);
+                        data.put("idPadre", padreId);
                         System.out.println("-------------------------------------------");
-                        System.out.println("IdAlumno a reoortar"+idAlumno);
+                        System.out.println("IdAlumno a reoortar" + idAlumno);
                         System.out.println("-------------------------------------------");
 
                         FCMBody fcmBody = new FCMBody(token, "high", data);
@@ -215,7 +227,7 @@ public class activity_reporte extends AppCompatActivity {
                             public void onResponse(Call<FCMResponse> call, Response<FCMResponse> response) {
                                 if (call.isExecuted()) {
                                     toastHelper.LanzarToast("Se envio la notificacion", 1, getApplicationContext(), Gravity.BOTTOM);
-                                    Intent i = new Intent(getApplicationContext(),activity_PrincipalMaestro.class);
+                                    Intent i = new Intent(getApplicationContext(), activity_PrincipalMaestro.class);
                                     startActivity(i);
                                 }
                             }

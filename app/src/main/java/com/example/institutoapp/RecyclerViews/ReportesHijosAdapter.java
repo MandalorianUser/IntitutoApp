@@ -12,14 +12,20 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.institutoapp.Models.MaestroModelo;
 import com.example.institutoapp.Models.ReporteModelo;
+import com.example.institutoapp.Providers.MaestroProvider;
 import com.example.institutoapp.R;
 import com.example.institutoapp.activity_detail_reporte;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
 
 public class ReportesHijosAdapter extends FirebaseRecyclerAdapter<ReporteModelo, ReportesHijosAdapter.ViewHolder> {
     private Context mContext;
+    private MaestroProvider mMaestroProvider;
 
     /**
      * Initialize a {@link RecyclerView.Adapter} that listens to a Firebase query. See
@@ -30,12 +36,28 @@ public class ReportesHijosAdapter extends FirebaseRecyclerAdapter<ReporteModelo,
     public ReportesHijosAdapter(@NonNull FirebaseRecyclerOptions<ReporteModelo> options, Context context) {
         super(options);
         mContext = context;
+        mMaestroProvider = new MaestroProvider();
     }
 
     @Override
     protected void onBindViewHolder(@NonNull ViewHolder holder, int position, @NonNull ReporteModelo reporteModelo) {
 
-        holder.txtMaestroReporta.setText(reporteModelo.getMaestro_id());
+
+        mMaestroProvider.getUser(reporteModelo.getMaestro_id()).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()){
+                    holder.txtMaestroReporta.setText("Reporto : "+snapshot.child("nombre").getValue().toString());
+
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
         holder.txtDescripcion.setText(reporteModelo.getDescripcion());
         holder.txtFecha.setText(reporteModelo.getFecha());
 
@@ -64,6 +86,7 @@ public class ReportesHijosAdapter extends FirebaseRecyclerAdapter<ReporteModelo,
         private TextView txtMaestroReporta;
         private TextView txtDescripcion;
         private TextView txtFecha;
+        private TextView txtNumeroReportes;
 
         public ViewHolder(View view) {
             super(view);
@@ -72,6 +95,7 @@ public class ReportesHijosAdapter extends FirebaseRecyclerAdapter<ReporteModelo,
             txtDescripcion = view.findViewById(R.id.item_reporte_lblStatusReporte);
             txtFecha = view.findViewById(R.id.item_reporte_lblFecha);
             txtMaestroReporta = view.findViewById(R.id.item_reporte_lblIdAlumnoReportado);
+            txtNumeroReportes = view.findViewById(R.id.txtDetalleHijoNReportes);
         }
     }
 

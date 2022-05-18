@@ -25,7 +25,6 @@ public class ReporteProvider {
     }
 
     public DatabaseReference getReporte(String reporteId){return  mDatabase.child(reporteId);}
-
     public DatabaseReference getReportesAlumno(String idAlumno){return  mDatabase.child(idAlumno);}
 
     public Task<Void> updateStatus(String idReporte,String status){
