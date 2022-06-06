@@ -44,11 +44,9 @@ public class activity_hijo_detalle extends AppCompatActivity {
         mRecyclerView = findViewById(R.id.RecyclerViewDetalleHijo);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(linearLayoutManager);
-        txtReportes = findViewById(R.id.txtDetalleHijoNRepoprtes);
         txtNombre = findViewById(R.id.txtDetalleHijoNombre);
         recibirDatosHijo();
         txtNombre.setText(hijoExtra.getNombre().toUpperCase(Locale.ROOT));
-      //  listarReportes(hijoExtra.getId());
 
     }
 
@@ -56,45 +54,18 @@ public class activity_hijo_detalle extends AppCompatActivity {
         try {
 
             hijoExtra = (AlumnoModelo) getIntent().getExtras().getSerializable("hijoExtra");
-            System.out.println("------------------------------------------");
-            System.out.println("Desde el OnStart Hijo Detalle " + hijoExtra.toString());
-            System.out.println("------------------------------------------");
+
 
         } catch (Exception e) {
             Log.e("HijoDetalle", e.getMessage());
         }
     }
 
-  /*  private void listarReportes(String idAlumno) {
-        System.out.println("-------------------------------");
-        System.out.println("-------------------------------");
-        System.out.println("Id Alumno:" + idAlumno);
-
-        mReporteProvider.getReportesAlumno(idAlumno).addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot.exists()) {
-                    Toast.makeText(activity_hijo_detalle.this, "Existen reportes de este alumno", Toast.LENGTH_SHORT).show();
-                    System.out.println("-----------------------------------------");
-                    System.out.println("Reportes: " + snapshot.toString());
-                    System.out.println("-----------------------------------------");
-                } else
-                    Toast.makeText(activity_hijo_detalle.this, "Este alumno no tiene reportes", Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-    }
-      */
 
     @Override
     protected void onStart() {
         super.onStart();
 
-        Toast.makeText(this, "IdHijo = "+hijoExtra.getId(), Toast.LENGTH_SHORT).show();
         Query query = FirebaseDatabase.getInstance().getReference()
                 .child("Reportes")
                 .orderByChild("alumno_id")
