@@ -22,6 +22,7 @@
         <activity
             android:name=".activity_hijo_detalle"
             android:exported="true"
+            android:parentActivityName=".Padres.activity_principal_padre"
             android:screenOrientation="portrait" />
 
         <receiver

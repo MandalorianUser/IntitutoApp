@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,6 +26,8 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.Locale;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class activity_hijo_detalle extends AppCompatActivity {
     private ReporteProvider mReporteProvider;
 
@@ -34,6 +37,7 @@ public class activity_hijo_detalle extends AppCompatActivity {
     private String reportes;
     private TextView txtReportes, txtNombre;
     private AlumnoModelo hijoExtra;
+    private CircleImageView btnAtras;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +51,13 @@ public class activity_hijo_detalle extends AppCompatActivity {
         txtNombre = findViewById(R.id.txtDetalleHijoNombre);
         recibirDatosHijo();
         txtNombre.setText(hijoExtra.getNombre().toUpperCase(Locale.ROOT));
+        btnAtras = findViewById(R.id.detalleHijo_btnAtras);
+        btnAtras.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
     }
 

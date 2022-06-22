@@ -27,11 +27,13 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.example.institutoapp.Utils.biometric_authentication;
 
 import dmax.dialog.SpotsDialog;
 
-public class activity_LoginMaestro extends AppCompatActivity implements BiometricCallback {
+public class activity_LoginMaestro extends AppCompatActivity   {
     private ToastHelper mToasthelper;
+    private biometric_authentication mBiometric;
     private CloseKeyboard mCloseKeyboard;
     private Network mNetwork;
     private Button btnRegistrar;
@@ -52,6 +54,7 @@ public class activity_LoginMaestro extends AppCompatActivity implements Biometri
         mToasthelper = new ToastHelper();
         mNetwork =  new Network();
         mAuth = new AuthProvider();
+        mBiometric =  new biometric_authentication(activity_LoginMaestro.this,activity_PrincipalMaestro.class);
         mCloseKeyboard =  new CloseKeyboard();
         mDialog = new SpotsDialog.Builder().setContext(activity_LoginMaestro.this).setMessage("Espere un momento").build();
         btnRegistrar = (Button) findViewById(R.id.btnRegristarseMaestro);
@@ -149,7 +152,8 @@ public class activity_LoginMaestro extends AppCompatActivity implements Biometri
             mEmailRegistrado = getIntent().getStringExtra("Correo");
             edtEmail.setText(mEmailRegistrado);
             if(FirebaseAuth.getInstance().getUid()!=null){
-              huella();
+                Toast.makeText(this, "Iniciando biometric", Toast.LENGTH_SHORT).show();
+              mBiometric.huella(getApplicationContext());
             }
         }catch (Exception e){
             System.out.println("ERROR en el OnStart"+e);
@@ -158,70 +162,4 @@ public class activity_LoginMaestro extends AppCompatActivity implements Biometri
 
     }
 
-    @Override
-    public void onSdkVersionNotSupported() {
-        lanzar();
-    }
-
-    @Override
-    public void onBiometricAuthenticationNotSupported() {
-
-    }
-
-    @Override
-    public void onBiometricAuthenticationNotAvailable() {
-
-    }
-
-    @Override
-    public void onBiometricAuthenticationPermissionNotGranted() {
-
-    }
-
-    @Override
-    public void onBiometricAuthenticationInternalError(String error) {
-
-    }
-
-    @Override
-    public void onAuthenticationFailed() {
-        Toast.makeText(getApplicationContext(), "No se pudo verificar su identidad", Toast.LENGTH_LONG).show();
-    }
-
-    @Override
-    public void onAuthenticationCancelled() {
-
-    }
-
-    @Override
-    public void onAuthenticationSuccessful() {
-        lanzar();
-    }
-
-    @Override
-    public void onAuthenticationHelp(int helpCode, CharSequence helpString) {
-
-    }
-
-    @Override
-    public void onAuthenticationError(int errorCode, CharSequence errString) {
-        Toast.makeText(getApplicationContext(), "Ocurrio un error, por favor intentelo de nuevo", Toast.LENGTH_LONG).show();
-    }
-
-    public void huella(){
-        new BiometricManager.BiometricBuilder(activity_LoginMaestro.this)
-                .setTitle("Verifique su identidad")
-                .setSubtitle(" ")
-                .setDescription("Para continuar, por favor identifiquese!")
-                .setNegativeButtonText("Cancelar")
-                .build()
-                .authenticate(activity_LoginMaestro.this);
-
-    }
-
-    public void lanzar(){
-        Intent i = new Intent(activity_LoginMaestro.this,activity_PrincipalMaestro.class);
-        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(i);
-    }
 }

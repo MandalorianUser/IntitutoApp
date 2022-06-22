@@ -26,9 +26,10 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.example.institutoapp.Utils.biometric_authentication;
 
 import dmax.dialog.SpotsDialog;
-public class activity_LoginPadre extends AppCompatActivity implements BiometricCallback {
+public class activity_LoginPadre extends AppCompatActivity {
     private ToastHelper mToasthelper;
     private CloseKeyboard mCloseKeyboard;
     private Network mNetwork;
@@ -36,6 +37,7 @@ public class activity_LoginPadre extends AppCompatActivity implements BiometricC
     private EditText txtEmail, txtContraseña;
     private AlertDialog mDialog;
     private AuthProvider mAuthProvider;
+    private biometric_authentication mBiometric;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +46,7 @@ public class activity_LoginPadre extends AppCompatActivity implements BiometricC
         mAuthProvider = new AuthProvider();
         mNetwork =  new Network();
         mToasthelper =  new ToastHelper();
+        mBiometric = new biometric_authentication(activity_LoginPadre.this,activity_principal_padre.class);
         mCloseKeyboard =  new CloseKeyboard();
         try {
             String emailExtra = getIntent().getStringExtra("email");
@@ -118,7 +121,7 @@ public class activity_LoginPadre extends AppCompatActivity implements BiometricC
         try {
             FirebaseAuth mAuth = FirebaseAuth.getInstance();
             if (mAuth.getCurrentUser() != null) {
-              huella();
+              mBiometric.huella(activity_LoginPadre.this);
                 }
 
         } catch (Exception e) {
@@ -127,66 +130,7 @@ public class activity_LoginPadre extends AppCompatActivity implements BiometricC
 
     }
 
-    @Override
-    public void onSdkVersionNotSupported() {
 
-    }
-
-    @Override
-    public void onBiometricAuthenticationNotSupported() {
-        lanzar();
-    }
-
-    @Override
-    public void onBiometricAuthenticationNotAvailable() {
-        lanzar();
-    }
-
-    @Override
-    public void onBiometricAuthenticationPermissionNotGranted() {
-
-    }
-
-    @Override
-    public void onBiometricAuthenticationInternalError(String error) {
-
-    }
-
-    @Override
-    public void onAuthenticationFailed() {
-        Toast.makeText(getApplicationContext(), "No se pudo verificar su identidad", Toast.LENGTH_SHORT).show();
-
-    }
-
-    @Override
-    public void onAuthenticationCancelled() {
-
-    }
-
-    @Override
-    public void onAuthenticationSuccessful() {
-        lanzar();
-    }
-
-    @Override
-    public void onAuthenticationHelp(int helpCode, CharSequence helpString) {
-
-    }
-
-    @Override
-    public void onAuthenticationError(int errorCode, CharSequence errString) {
-        Toast.makeText(getApplicationContext(), "No se pudo verificar su identidad", Toast.LENGTH_SHORT).show();
-    }
-
-    public void huella(){
-        new BiometricManager.BiometricBuilder(activity_LoginPadre.this)
-                .setTitle("Verifique su identidad")
-                .setSubtitle(" ")
-                .setDescription("Para continuar, por favor identifiquese!")
-                .setNegativeButtonText("Cancelar")
-                .build()
-                .authenticate(activity_LoginPadre.this);
-    }
 
     public void lanzar(){
         Intent i = new Intent(activity_LoginPadre.this, activity_principal_padre.class);
