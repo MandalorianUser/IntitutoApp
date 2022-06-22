@@ -29,7 +29,7 @@ public class biometric_authentication implements BiometricCallback {
                 .setDescription("Para continuar, por favor identifiquese!")
                 .setNegativeButtonText("Cancelar")
                 .build()
-                .authenticate(mContext);
+                .authenticate((BiometricCallback) mContext);
 
     }
 
@@ -70,7 +70,7 @@ public class biometric_authentication implements BiometricCallback {
     @Override
     public void onAuthenticationFailed() {
         System.out.println("--------------------------------------");
-        System.out.println(" huella Failsed");
+        System.out.println(" huella Failed");
         System.out.println("--------------------------------------");
         Toast.makeText(mContext, "Por favor  inicie sesion de nuevo", Toast.LENGTH_SHORT).show();
         mContext.finish();

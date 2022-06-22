@@ -41,17 +41,16 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class activity_PrincipalMaestro extends AppCompatActivity {
     private ArrayList<ReporteModelo> listReporte = new ArrayList<ReporteModelo>();
     private TokenProvider mTokenProvider;
-    ArrayAdapter<ReporteModelo> arrayAdapterReporte;
-    RecyclerView mRecyclerViewReportes;
-    FirebaseDatabase firebaseDatabase;
-    DatabaseReference databaseReference;
-    FloatingActionButton btnNuevo;
-    AuthProvider mAuthProvider;
-    MaestroProvider mMaestroProvider;
-    CircleImageView mFotoUser;
+    private RecyclerView mRecyclerViewReportes;
+    private FirebaseDatabase firebaseDatabase;
+    private DatabaseReference databaseReference;
+    private FloatingActionButton btnNuevo;
+    private AuthProvider mAuthProvider;
+    private MaestroProvider mMaestroProvider;
+    private CircleImageView mFotoUser;
     private RecylerViewFirebasePrincipalMaestro mAdapter;
-    TextView lblTitulo;
-    Toolbar mToolbar;
+    private TextView lblTitulo;
+    private Toolbar mToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,8 +58,8 @@ public class activity_PrincipalMaestro extends AppCompatActivity {
         setContentView(R.layout.activity_principal_maestro);
         FirebaseApp.initializeApp(this);
         mMaestroProvider = new MaestroProvider();
-        mFotoUser =  findViewById(R.id.imgMaestroPrincipal);
-        mAuthProvider =  new AuthProvider();
+        mFotoUser = findViewById(R.id.imgMaestroPrincipal);
+        mAuthProvider = new AuthProvider();
         mTokenProvider = new TokenProvider();
         mToolbar = findViewById(R.id.Toolbar);
         mToolbar.setTitleTextColor(getResources().getColor(R.color.white));

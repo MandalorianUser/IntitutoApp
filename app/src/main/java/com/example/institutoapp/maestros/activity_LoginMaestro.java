@@ -45,7 +45,6 @@ public class activity_LoginMaestro extends AppCompatActivity   {
     private String mEmailRegistrado;
     private TextInputEditText edtEmail;
 
-    private MaestroProvider firebaseHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
