@@ -138,11 +138,7 @@ public class activity_principal_padre extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
 
-    }
 
     private void listarHijos(String hijosPadre) {
         String[] hijos =  hijosPadre.split("-");
@@ -153,6 +149,10 @@ public class activity_principal_padre extends AppCompatActivity {
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                    if(snapshot.exists()){
                        AlumnoModelo a = snapshot.getValue(AlumnoModelo.class);
+                       System.out.println("---------------------------------------------");
+                       System.out.println("Generando lista de hijos");
+                       System.out.println("Hijo "+a.toString());
+                       System.out.println("---------------------------------------------");
                        alumnosList.add(a);
                    }
 

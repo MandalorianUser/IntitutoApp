@@ -3,20 +3,23 @@ package com.example.institutoapp.Models;
 import java.io.Serializable;
 
 public class AlumnoModelo implements Serializable {
-    private String id, nombre, grupo_id, escolaridad_id, padre_id, curp, img, grupo;
+    private String curp,escolaridad_id,grupo,grupo_id,id,img, nombre, padre_id;
 
     public AlumnoModelo() {
     }
 
-    public AlumnoModelo(String id, String nombre, String grupo_id, String escolaridad_id, String padre_id, String curp, String img, String grupo) {
-        this.id = id;
-        this.nombre = nombre;
-        this.grupo_id = grupo_id;
-        this.escolaridad_id = escolaridad_id;
-        this.padre_id = padre_id;
+    public AlumnoModelo(String curp, String escolaridad_id, String grupo, String grupo_id, String id, String img, String nombre, String padre_id) {
         this.curp = curp;
-        this.img = img;
+        this.escolaridad_id = escolaridad_id;
         this.grupo = grupo;
+        this.grupo_id = grupo_id;
+        this.id = id;
+        this.img = img;
+        this.nombre = nombre;
+        this.padre_id = padre_id;
+    }
+
+    public AlumnoModelo(AlumnoModelo alumnoModelo) {
     }
 
     public String getId() {
@@ -81,6 +84,20 @@ public class AlumnoModelo implements Serializable {
 
     public void setGrupo(String grupo) {
         this.grupo = grupo;
+    }
+
+    @Override
+    public String toString() {
+        return "AlumnoModelo{" +
+                "id='" + id + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", grupo_id='" + grupo_id + '\'' +
+                ", escolaridad_id='" + escolaridad_id + '\'' +
+                ", padre_id='" + padre_id + '\'' +
+                ", curp='" + curp + '\'' +
+                ", img='" + img + '\'' +
+                ", grupo='" + grupo + '\'' +
+                '}';
     }
 }
 
