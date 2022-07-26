@@ -2,6 +2,7 @@ package com.example.institutoapp;
 
 import android.content.Intent;
 
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.format.Time;
@@ -72,6 +73,7 @@ public class activity_reporte extends AppCompatActivity {
     private Date fecha = new Date();
     private String fechaActual = df.format(fecha);
     private AutoCompleteTextView txtUrgencia;
+    private SharedPreferences mMaestroPreferences;
 
 
     @RequiresApi(api = Build.VERSION_CODES.N)
@@ -203,6 +205,7 @@ public class activity_reporte extends AppCompatActivity {
                         data.put("fecha", fechaActual);
                         data.put("tipoReporte", tipoReporte);
                         data.put("idPadre",padreId);
+                        data.put("NombreMaestro",mMaestroPreferences.getString("name",""));
                         System.out.println("-------------------------------------------");
                         System.out.println("IdAlumno a reoortar"+idAlumno);
                         System.out.println("-------------------------------------------");
@@ -251,7 +254,10 @@ public class activity_reporte extends AppCompatActivity {
         try {
             padreId = getIntent().getStringExtra("padre_ID");
             alumnoModelo = (AlumnoModelo) getIntent().getSerializableExtra("Alumno");
-
+            mMaestroPreferences = getSharedPreferences("Maestro",MODE_PRIVATE);
+            SharedPreferences.Editor editor  = mMaestroPreferences.edit();
+            editor.putString("name",getIntent().getStringExtra("maestroNombre"));
+            editor.apply();
 
             txtIdAlumno.setText(alumnoModelo.getId());
 
