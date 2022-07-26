@@ -18,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.example.institutoapp.Models.FCMBody;
 import com.example.institutoapp.Models.FCMResponse;
 import com.example.institutoapp.Models.MaestroModelo;
@@ -43,7 +44,6 @@ import retrofit2.Response;
 
 public class activity_detail_reporte extends AppCompatActivity {
     private ReporteProvider mReporteProvider;
-    private MaestroProvider mMaestroProvider;
     private TokenProvider   mTokenProvider;
     private NotificationProvider mNotificationProvider;
     private TextView mtvTituloNotificacion, mtvDetalleNotificacion,
@@ -51,8 +51,9 @@ public class activity_detail_reporte extends AppCompatActivity {
     private Button btnNotificationReaded;
     private ReporteModelo mExtraReporte;
     private Toolbar mToolbar;
-    private ImageView icWarning;
+    private ImageView icWarning,imgReporte;
     private DateFormat df;
+    private LottieAnimationView lottieWarning;
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
@@ -65,10 +66,11 @@ public class activity_detail_reporte extends AppCompatActivity {
         setSupportActionBar(mToolbar);
         showInfoDialow();
         mReporteProvider = new ReporteProvider();
-        mMaestroProvider = new MaestroProvider();
         mTokenProvider   = new TokenProvider();
         mNotificationProvider = new NotificationProvider();
         icWarning = findViewById(R.id.ic_warningDetailReporte);
+        imgReporte = findViewById(R.id.detailActivityImg_urgencia_reporte);
+        lottieWarning = findViewById(R.id.detail_activity_AnimationWarning);
         icWarning.setVisibility(View.INVISIBLE);
         mExtraReporte = (ReporteModelo) getIntent().getExtras().getSerializable("Reporte");
 
@@ -84,10 +86,13 @@ public class activity_detail_reporte extends AppCompatActivity {
         mtvTituloNotificacion.setText(mExtraReporte.getTipo());
         mtvDetalleNotificacion.setText(mExtraReporte.getDescripcion());
         if (mExtraReporte.getGravedad().trim().equals("Urgente")) {
+            imgReporte.setVisibility(View.INVISIBLE);
             mTvUrgencia.setText("SE REQUIERE SU PRESENCIA DE INMEDIATO");
             icWarning.setVisibility(View.VISIBLE);
         }
         else if(mExtraReporte.getGravedad().trim().contains("Normal")) {
+            imgReporte.setVisibility(View.VISIBLE);
+            lottieWarning.setVisibility(View.INVISIBLE);
             icWarning.setImageResource(R.drawable.ic_atention);
             icWarning.setVisibility(View.VISIBLE);
             mTvUrgencia.setText("Por favor tome las medidas necesarias");

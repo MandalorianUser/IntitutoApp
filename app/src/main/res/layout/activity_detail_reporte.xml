@@ -10,8 +10,8 @@
 
     <include layout="@layout/toolbar" />
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/img_urgencia_reporte"
+    <ImageView
+        android:id="@+id/detailActivityImg_urgencia_reporte"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_gravity="top|center"
@@ -19,8 +19,17 @@
         android:src="@drawable/undraw_teacher"
         tools:ignore="VectorDrawableCompat" />
 
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/detail_activity_AnimationWarning"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="60dp"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/ic_warningbig" />
+
     <LinearLayout
-        android:layout_below="@+id/img_urgencia_reporte"
+        android:layout_below="@+id/detailActivityImg_urgencia_reporte"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
