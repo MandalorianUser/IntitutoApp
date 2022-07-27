@@ -2,6 +2,7 @@ package com.example.institutoapp;
 
 import android.content.Intent;
 
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.format.Time;
@@ -72,6 +73,8 @@ public class activity_reporte extends AppCompatActivity {
     private Date fecha = new Date();
     private String fechaActual = df.format(fecha);
     private AutoCompleteTextView txtUrgencia;
+    private PadreModelo p;
+    private SharedPreferences mPadrePreferences;
 
 
     @RequiresApi(api = Build.VERSION_CODES.N)
@@ -93,7 +96,6 @@ public class activity_reporte extends AppCompatActivity {
         reporteModelo = new ReporteModelo();
         mReporteProvider = new ReporteProvider();
         mGenerateId = new GeneratorId();
-        int urgencias = R.array.Urgencias;
 
         txtUrgencia =  findViewById(R.id.txtAutocompleteLayoutUrgenciaReporte);
         Button btnReportar = findViewById(R.id.btnReportarAlumno);
@@ -117,17 +119,30 @@ public class activity_reporte extends AppCompatActivity {
             public void onClick(View v) {
                 String idAlumnoSearch = txtIdAlumno.getText().toString().trim();
                 if (!idAlumnoSearch.equals("") | !idAlumnoSearch.isEmpty()) {
+                    Toast.makeText(activity_reporte.this, "BUSCANDO ALUMNO "+idAlumnoSearch, Toast.LENGTH_SHORT).show();
                     mAlumnoProvider.getUser(idAlumnoSearch).addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                             if (snapshot.exists()) {
+
                                 AlumnoModelo a = snapshot.getValue(AlumnoModelo.class);
                                 String padreId = a.getPadre_id();
                                 mPadreProvider.getPadre(padreId).addListenerForSingleValueEvent(new ValueEventListener() {
                                     @Override
                                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                                         if (snapshot.exists()) {
-                                            PadreModelo p = snapshot.getValue(PadreModelo.class);
+                                             p = snapshot.getValue(PadreModelo.class);
+                                            Toast.makeText(activity_reporte.this, "Encibtrado padre "+p.getId_firebase(), Toast.LENGTH_SHORT).show();
+                                            System.out.println("------------------------------------");
+                                            System.out.println("p "+p.toString());
+                                            System.out.println("snapshot padre "+snapshot.toString());
+
+                                            System.out.println("------------------------------------");
+                                            mPadrePreferences =  getSharedPreferences("Padre",MODE_PRIVATE);
+                                            SharedPreferences.Editor editor = mPadrePreferences.edit();
+                                            editor.putString("padreId",p.getId_firebase());
+                                            editor.apply();
+
                                         }
                                     }
 
@@ -147,7 +162,8 @@ public class activity_reporte extends AppCompatActivity {
 
                         }
                     });
-                } else {
+                }
+                else {
                     Intent i = new Intent(getApplicationContext(), activity_escolaridad.class);
                     startActivity(i);
                 }
@@ -160,6 +176,7 @@ public class activity_reporte extends AppCompatActivity {
             public void onClick(View v) {
 
                 if (infoReporte()) {
+                    padreId = mPadrePreferences.getString("padreId","Vacio");
                     sendNotification(padreId);
                 }
 
@@ -173,6 +190,8 @@ public class activity_reporte extends AppCompatActivity {
     @RequiresApi(api = Build.VERSION_CODES.N)
     private void sendNotification(String padreId) {
         try {
+
+            Toast.makeText(this, "PadreId Send "+padreId, Toast.LENGTH_SHORT).show();
 
             final String idAlumno = txtIdAlumno.getText().toString();
             final String urgencia = txtUrgencia.getText().toString();
@@ -275,6 +294,10 @@ public class activity_reporte extends AppCompatActivity {
                     PadreModelo p = snapshot.getValue(PadreModelo.class);
                     assert p != null;
                     padreId = p.getId_firebase();
+                    mPadrePreferences =  getSharedPreferences("Padre",MODE_PRIVATE);
+                    SharedPreferences.Editor editor = mPadrePreferences.edit();
+                    editor.putString("padreId",padreId);
+                    editor.apply();
                 } else {
                     System.out.println("-------------------");
                     System.out.println("No se encontro el padre " + a.getPadre_id());

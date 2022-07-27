@@ -99,10 +99,9 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <ImageView
-                android:layout_marginTop="4dp"
                 android:id="@+id/btnBuscar"
-                android:layout_width="54dp"
-                android:layout_height="@dimen/btn_seleccionarimg"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
                 app:srcCompat="@drawable/ic_search"
 
                 app:tint="@color/lblNormal" />
