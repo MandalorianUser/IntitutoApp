@@ -64,5 +64,15 @@ public class PadreModelo {
         this.imagen = imagen;
     }
 
-
+    @Override
+    public String toString() {
+        return "PadreModelo{" +
+                "id='" + id + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", email='" + email + '\'' +
+                ", id_firebase='" + id_firebase + '\'' +
+                ", imagen='" + imagen + '\'' +
+                ", id_institucional='" + id_institucional + '\'' +
+                '}';
+    }
 }

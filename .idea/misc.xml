@@ -19,7 +19,7 @@
         <entry key="app/src/main/res/layout/activity_alumnos_grupo.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_alumnos_info.xml" value="0.165" />
         <entry key="app/src/main/res/layout/activity_bienvenida.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_detail_reporte.xml" value="0.125" />
+        <entry key="app/src/main/res/layout/activity_detail_reporte.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/activity_escolaridad.xml" value="0.165" />
         <entry key="app/src/main/res/layout/activity_grupos.xml" value="0.11824324324324324" />
         <entry key="app/src/main/res/layout/activity_hijo_detalle.xml" value="0.165" />
@@ -41,7 +41,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

@@ -55,11 +55,11 @@ public class MyFirebaseMessagingClient extends FirebaseMessagingService {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                     if(title.contains("Alerta de reporte")){
                         showNotificationOreo(title, body,reporteModelo);
-                        showNotificationOreoActivity(title, reporteModelo, body);
+                        showNotificationOreoActivity(reporteModelo);
                     }
                     else{
                         showNotificationOreoMaestro(title, body,reporteModelo);
-                        showNotificationOreoActivityMaestro(title, reporteModelo, body);
+                        showNotificationOreoActivityMaestro(reporteModelo);
                     }
 
 
@@ -67,11 +67,11 @@ public class MyFirebaseMessagingClient extends FirebaseMessagingService {
             } else {
                 if (title.contains("Alerta de reporte")){
                     showNotification(title, body,reporteModelo);
-                    showNotificationOreoActivity(title, reporteModelo, body);
+                    showNotificationOreoActivity(reporteModelo);
                 }
                 else{
                     showNotificationMaestro(title,body,reporteModelo);
-                    showNotificationActivityMaestro(title,body,reporteModelo);
+                    showNotificationActivityMaestro(reporteModelo);
                 }
 
 
@@ -80,7 +80,7 @@ public class MyFirebaseMessagingClient extends FirebaseMessagingService {
 
     }
 
-    private void showNotificationOreoActivityMaestro(String title, ReporteModelo reporteModelo, String body) {
+    private void showNotificationOreoActivityMaestro(ReporteModelo reporteModelo) {
         PowerManager pm = (PowerManager) getBaseContext().getSystemService(Context.POWER_SERVICE);
         boolean isScreenOn = pm.isScreenOn();
         if(!isScreenOn){
@@ -111,7 +111,7 @@ public class MyFirebaseMessagingClient extends FirebaseMessagingService {
         notificationHelper.getManager().notify(1, builder.build());
     }
 
-    private void showNotificationOreoActivity(String title, ReporteModelo reporteModelo, String body) {
+    private void showNotificationOreoActivity( ReporteModelo reporteModelo) {
         PowerManager pm = (PowerManager) getBaseContext().getSystemService(Context.POWER_SERVICE);
         boolean isScreenOn = pm.isScreenOn();
         if(!isScreenOn){
@@ -130,7 +130,7 @@ public class MyFirebaseMessagingClient extends FirebaseMessagingService {
         startActivity(intent);
     }
 
-
+/*
     @RequiresApi(api = Build.VERSION_CODES.O)
     private void showNotificationOreoActions(String title, ReporteModelo reporteModelo, String body) {
         Bundle bundle = new Bundle();
@@ -170,7 +170,7 @@ public class MyFirebaseMessagingClient extends FirebaseMessagingService {
         NotificationCompat.Builder builder = notificationHelper.getNotificationActionsOldApi(title, reporteModelo.getDescripcion(), sound, detailAction);
         notificationHelper.getManager().notify(2, builder.build());
     }
-
+*/
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     private void showNotificationOreo(String title, String body,ReporteModelo reporteModelo ) {
@@ -208,7 +208,7 @@ public class MyFirebaseMessagingClient extends FirebaseMessagingService {
     }
 
 
-    private void  showNotificationActivityMaestro(String title, String body, ReporteModelo reporteModelo ){
+    private void  showNotificationActivityMaestro(  ReporteModelo reporteModelo ){
         PowerManager pm = (PowerManager)getBaseContext().getSystemService(Context.POWER_SERVICE);
         boolean isScreenOn = pm.isScreenOn();
         if (!isScreenOn){
