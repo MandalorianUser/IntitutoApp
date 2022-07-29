@@ -77,6 +77,7 @@ public class activity_reporte extends AppCompatActivity {
     private SharedPreferences mPadrePreferences;
 
 
+
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -222,6 +223,7 @@ public class activity_reporte extends AppCompatActivity {
                         data.put("fecha", fechaActual);
                         data.put("tipoReporte", tipoReporte);
                         data.put("idPadre",padreId);
+                        data.put("NombreMaestro",mMaestroPreferences.getString("name",""));
                         System.out.println("-------------------------------------------");
                         System.out.println("IdAlumno a reoortar"+idAlumno);
                         System.out.println("-------------------------------------------");
@@ -270,7 +272,10 @@ public class activity_reporte extends AppCompatActivity {
         try {
             padreId = getIntent().getStringExtra("padre_ID");
             alumnoModelo = (AlumnoModelo) getIntent().getSerializableExtra("Alumno");
-
+            mMaestroPreferences = getSharedPreferences("Maestro",MODE_PRIVATE);
+            SharedPreferences.Editor editor  = mMaestroPreferences.edit();
+            editor.putString("name",getIntent().getStringExtra("maestroNombre"));
+            editor.apply();
 
             txtIdAlumno.setText(alumnoModelo.getId());
 

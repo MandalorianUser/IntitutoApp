@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -41,17 +42,17 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class activity_PrincipalMaestro extends AppCompatActivity {
     private ArrayList<ReporteModelo> listReporte = new ArrayList<ReporteModelo>();
     private TokenProvider mTokenProvider;
-    ArrayAdapter<ReporteModelo> arrayAdapterReporte;
-    RecyclerView mRecyclerViewReportes;
-    FirebaseDatabase firebaseDatabase;
-    DatabaseReference databaseReference;
-    FloatingActionButton btnNuevo;
-    AuthProvider mAuthProvider;
-    MaestroProvider mMaestroProvider;
-    CircleImageView mFotoUser;
+    private RecyclerView mRecyclerViewReportes;
+    private FirebaseDatabase firebaseDatabase;
+    private DatabaseReference databaseReference;
+    private FloatingActionButton btnNuevo;
+    private AuthProvider mAuthProvider;
+    private MaestroProvider mMaestroProvider;
+    private CircleImageView mFotoUser;
     private RecylerViewFirebasePrincipalMaestro mAdapter;
-    TextView lblTitulo;
-    Toolbar mToolbar;
+    private TextView lblTitulo;
+    private Toolbar mToolbar;
+    private SharedPreferences mMaestroPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,6 +83,7 @@ public class activity_PrincipalMaestro extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), activity_reporte.class);
+                i.putExtra("maestroNombre",mMaestroPreferences.getString("Nombre",""));
                 startActivity(i);
             }
         });
@@ -94,6 +96,10 @@ public class activity_PrincipalMaestro extends AppCompatActivity {
                 if (snapshot.exists()){
                     String imgUserUrl = snapshot.child("imagen").getValue().toString();
                     String userName =  snapshot.child("nombre").getValue().toString();
+                    mMaestroPreferences  = getSharedPreferences("Maestro",MODE_PRIVATE);
+                    SharedPreferences.Editor editor  = mMaestroPreferences.edit();
+                    editor.putString("Nombre",userName);
+                    editor.apply();
                     Picasso.with(activity_PrincipalMaestro.this).load(imgUserUrl).into(mFotoUser);
                     lblTitulo.setText(userName);
                 }
