@@ -38,7 +38,6 @@
             android:layout_marginLeft="@dimen/GeneralMargin"
             android:layout_marginTop="@dimen/GeneralMargin"
             android:src="@drawable/ic_backbutton"
-            app:civ_circle_background_color="@color/white"
             app:theme="@style/btnAtras"
             tools:ignore="VectorDrawableCompat" />
 
