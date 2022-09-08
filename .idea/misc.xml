@@ -22,9 +22,9 @@
         <entry key="app/src/main/res/layout/activity_detail_reporte.xml" value="0.125" />
         <entry key="app/src/main/res/layout/activity_escolaridad.xml" value="0.165" />
         <entry key="app/src/main/res/layout/activity_grupos.xml" value="0.11824324324324324" />
-        <entry key="app/src/main/res/layout/activity_hijo_detalle.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/activity_hijo_detalle.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_login_maestro.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_login_padre.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_login_padre.xml" value="0.165" />
         <entry key="app/src/main/res/layout/activity_padre_notification_entered.xml" value="0.165" />
         <entry key="app/src/main/res/layout/activity_principal_maestro.xml" value="0.125" />
         <entry key="app/src/main/res/layout/activity_principal_padre.xml" value="0.125" />
