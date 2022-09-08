@@ -39,10 +39,9 @@
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/btnAtrasRegisterMaestro"
                 android:layout_width="0dp"
-
                 android:layout_height="match_parent"
                 android:layout_marginLeft="5dp"
-                android:layout_weight="2"
+                android:layout_weight="1"
                 android:src="@drawable/ic_backbutton"
                 app:srcCompat="@drawable/ic_backbutton"
                 app:theme="@style/btnAtras"
@@ -53,7 +52,7 @@
                 android:id="@+id/textView"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="8"
+                android:layout_weight="7"
                 android:text="@string/txtRegistro"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/lbl_titulo"

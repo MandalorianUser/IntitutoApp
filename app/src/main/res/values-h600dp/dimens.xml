@@ -2,7 +2,7 @@
 <resources>
     //GENERALES
     <dimen name="form_heigth">300dp</dimen>
-    <dimen name="formRegistromarginBottom">140dp</dimen>
+    <dimen name="formRegistromarginBottom">130dp</dimen>
     <dimen name="back_height">300dp</dimen>
     <dimen name="lbl_titulo">32sp</dimen>
 

@@ -10,7 +10,7 @@
 
     <com.github.florent37.shapeofview.shapes.ArcView
         android:layout_width="match_parent"
-        android:layout_height="@dimen/back_height"
+        android:layout_height="270dp"
         android:background="@color/colorSecondary"
         android:elevation="1dp"
         app:shape_arc_height="20dp"
@@ -31,15 +31,42 @@
         android:layout_height="wrap_content"
         android:elevation="2dp">
 
-     <LinearLayout
-         android:layout_width="match_parent"
-         android:layout_height=""
+        <LinearLayout
+            android:id="@+id/encabezadoRegistroPadre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="5dp"
+            android:textAlignment="center"
+            android:weightSum="10">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/btnAtrasRegisterPadre"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/ic_backbutton"
+                app:theme="@style/btnAtras"
+                tools:ignore="VectorDrawableCompat" />
+
+            <TextView
+                android:layout_marginLeft="5dp"
+                android:textAlignment="center"
+                android:id="@+id/textView"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="8"
+                android:text="@string/txtRegistro"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/lbl_titulo"
+                android:textStyle="bold" />
+        </LinearLayout>
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/FotoPerfilPadre"
             android:layout_width="@dimen/img_width"
-            android:layout_height="@dimen/img_height"
-            android:layout_below="@+id/textView"
+            android:layout_height="220dp"
+            android:layout_below="@+id/encabezadoRegistroPadre"
             android:layout_centerHorizontal="true"
             android:elevation="3dp"
             android:scaleType="centerCrop"
