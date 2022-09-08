@@ -19,4 +19,6 @@ public class CloseKeyboard {
             }
             imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
         }
-    }
+
+
+}

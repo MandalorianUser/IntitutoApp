@@ -33,6 +33,7 @@
     <dimen name="targetEscolaridad_imgWidth">150dp</dimen>
     <dimen name="targetEscolaridad_imgHeigth">150dp</dimen>
     <dimen name="formRegistromarginBottom">75dp</dimen>
+    <dimen name="marginTopImgLogo">40dp</dimen>
 
 
 </resources>

@@ -12,10 +12,8 @@
         android:layout_height="@dimen/back_height"
         android:background="@color/colorPrimary"
         android:elevation="1dp"
-
         app:shape_arc_height="20dp"
         app:shape_arc_position="bottom">
-
         <View
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -31,35 +29,45 @@
         android:layout_height="wrap_content"
         android:elevation="3dp">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/btnAtrasRegisterMaestro"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="@dimen/GeneralMargin"
-            android:layout_marginTop="@dimen/GeneralMargin"
-            android:src="@drawable/ic_backbutton"
-            app:civ_circle_background_color="@color/white"
-            app:srcCompat="@drawable/ic_backbutton"
-            app:theme="@style/btnAtras"
-            tools:ignore="VectorDrawableCompat" />
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/registroMaestroEncabezado"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
-            android:text="@string/txtRegistro"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/lbl_titulo"
-            android:textStyle="bold" />
+            android:layout_marginTop="10dp"
+            android:weightSum="9">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/btnAtrasRegisterMaestro"
+                android:layout_width="0dp"
+
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="2"
+                android:src="@drawable/ic_backbutton"
+                app:srcCompat="@drawable/ic_backbutton"
+                app:theme="@style/btnAtras"
+                tools:ignore="VectorDrawableCompat" />
+
+            <TextView
+                android:layout_marginStart="5dp"
+                android:id="@+id/textView"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="8"
+                android:text="@string/txtRegistro"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/lbl_titulo"
+                android:textStyle="bold" />
+
+        </LinearLayout>
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/FotoPerfil"
             android:layout_width="@dimen/img_width"
             android:layout_height="@dimen/img_height"
-            android:layout_below="@id/textView"
+            android:layout_below="@id/registroMaestroEncabezado"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/marginTopImgLogo"
             android:contentDescription="@string/imgDescripction"
             android:elevation="3dp"
             android:src="@drawable/ic_user"
@@ -71,11 +79,11 @@
             android:id="@+id/btnSelecccionarImagen"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_alignRight="@+id/FotoPerfil"
+            android:layout_alignEnd="@+id/FotoPerfil"
             android:layout_alignBottom="@+id/FotoPerfil"
             android:elevation="3dp"
             android:src="@drawable/ic_add"
-            app:civ_border_color="@color/white"
+            app:civ_circle_background_color="@color/white"
             app:srcCompat="@drawable/ic_add"
             tools:ignore="VectorDrawableCompat" />
 
@@ -85,7 +93,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="500dp"
         android:layout_gravity="bottom"
         android:layout_marginBottom="@dimen/formRegistromarginBottom"
         android:orientation="vertical"
@@ -94,9 +102,8 @@
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:id="@+id/txtMaestroIdLayout"
-
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/txt_heigth"
             app:endIconMode="clear_text"
             app:hintTextColor="@color/colorSecondary"
             app:startIconDrawable="@drawable/ic_lock">
@@ -105,7 +112,8 @@
 
                 android:id="@+id/txtMaestroId"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:textSize="@dimen/fontZize_txtInput"
                 android:hint="@string/id_institucional"
                 android:inputType="textPersonName"
                 android:textAllCaps="false"
@@ -118,11 +126,9 @@
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:id="@+id/txtMaestroNombreLayout"
-
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/txt_heigth"
             app:endIconMode="clear_text"
-
             app:hintTextColor="@color/colorSecondary"
             app:startIconDrawable="@drawable/ic_baseline_perm_identity_24">
 
@@ -130,38 +136,38 @@
 
                 android:id="@+id/txtMaestroNombre"
                 android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="@dimen/fontZize_txtInput"
 
-                android:layout_height="wrap_content"
                 android:hint="@string/nombre"
                 android:inputType="textPersonName"
                 android:textAllCaps="false"
                 android:textColorHighlight="#FFFFFF"
                 android:textColorLink="@color/colorSecondary"
                 android:textCursorDrawable="@color/colorSecondary"
-                android:textSize="@dimen/txt_inputs" />
+               />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:id="@+id/txtMaestroEmailLayout"
-
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/txt_heigth"
             app:hintTextColor="@color/colorSecondary"
-
             app:startIconDrawable="@drawable/ic_email">
 
             <com.google.android.material.textfield.TextInputEditText
 
                 android:id="@+id/txtMaestroEmail"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:textSize="@dimen/fontZize_txtInput"
+
                 android:hint="@string/Email"
                 android:inputType="textEmailAddress"
                 android:textAllCaps="false"
                 android:textColorHighlight="#FFFFFF"
-                android:textSize="@dimen/txt_inputs"
                 app:endIconMode="clear_text" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -169,7 +175,7 @@
             android:id="@+id/txtRegistroMaestroPass1Layout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/txt_heigth"
             app:startIconDrawable="@drawable/ic_lock"
             app:hintTextColor="@color/colorSecondary"
             app:passwordToggleEnabled="true">
@@ -177,17 +183,18 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/txtRegistroMaestroPass1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:textSize="@dimen/fontZize_txtInput"
+
                 android:hint="@string/txtpassword"
-                android:inputType="textPassword"
-                android:textSize="@dimen/txt_inputs" />
+                android:inputType="textPassword"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/txtRegistroMaestroPass2Layout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/txt_heigth"
             app:hintTextColor="@color/colorSecondary"
             app:startIconDrawable="@drawable/ic_lock"
             app:passwordToggleEnabled="true">
@@ -195,11 +202,10 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/txtRegistroMaestroPass2"
                 android:layout_width="match_parent"
-
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:textSize="@dimen/fontZize_txtInput"
                 android:hint="@string/txtpasswordConfirm"
-                android:inputType="textPassword"
-                android:textSize="@dimen/txt_inputs" />
+                android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
 
 

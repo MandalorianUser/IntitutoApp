@@ -86,12 +86,15 @@
                     app:endIconMode="clear_text"
                     app:startIconDrawable="@drawable/ic_email"
                     android:layout_marginBottom="5dp"
-                    android:layout_height="wrap_content">
+                    android:textSize="@dimen/fontZize_txtInput"
+
+                    android:layout_height="@dimen/txt_heigth">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/txtLoginMaestroEmail"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textSize="@dimen/fontZize_txtInput"
 
                         android:ems="10"
                         android:hint="@string/Email"
@@ -104,14 +107,16 @@
                     app:hintTextColor="@color/colorSecondary"
                     android:layout_width="match_parent"
                     app:startIconDrawable="@drawable/ic_lock"
-                    android:layout_height="wrap_content"
+                    android:layout_height="@dimen/txt_heigth"
+                    android:textSize="@dimen/fontZize_txtInput"
 
                     app:passwordToggleEnabled="true">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/txtPassLoginMaestro"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textSize="@dimen/fontZize_txtInput"
                         android:hint="@string/txtPass"
                         android:inputType="textPassword" />
                 </com.google.android.material.textfield.TextInputLayout>

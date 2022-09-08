@@ -29,6 +29,7 @@ import com.example.institutoapp.Providers.AuthProvider;
 import com.example.institutoapp.Providers.ImageProvider;
 import com.example.institutoapp.Providers.MaestroProvider;
 import com.example.institutoapp.R;
+import com.example.institutoapp.Utils.CloseKeyboard;
 import com.example.institutoapp.Utils.FileUtil;
 import com.example.institutoapp.Utils.InfoDialog;
 import com.example.institutoapp.Utils.Network;
@@ -68,6 +69,7 @@ public class activity_RegistroMaestro extends AppCompatActivity {
     private ToastHelper mToasthelper;
 
     private MaestroModelo maestroModelo;
+    private CloseKeyboard c;
     private int errores;
     private TextInputLayout txtEmail, txtPass1, txtPass2, txtId, txtNombre;
     private final int GALLERY_REQUEST_CODE = 1;
@@ -117,6 +119,7 @@ public class activity_RegistroMaestro extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
+
                     registerUser();
                 } catch (Exception e) {
                     System.out.println("Error" + e);
@@ -426,6 +429,7 @@ public class activity_RegistroMaestro extends AppCompatActivity {
         btnRegistrarMaestro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                c.CloseKeyboard(activity_RegistroMaestro.this);
                 errores = validar();
                 if (errores == 0) {
                     mDialog.show();

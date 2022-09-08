@@ -30,7 +30,7 @@
 
     //TEXT INPUTS
     <dimen name="margin_txt_input">10dp</dimen>
-    <dimen name="txt_inputs">12sp</dimen>
+    <dimen name="fontZize_txtInput">12sp</dimen>
     <dimen name="txt_heigth">30dp</dimen>
     <dimen name="itemReporte_img_heigth">80dp</dimen>
     <dimen name="itemReporte_img_width">80dp</dimen>
@@ -38,6 +38,7 @@
     <dimen name="txt_descripcion_heigth">75dp</dimen>
     <dimen name="imgLogo_marginTop">60dp</dimen>
     <dimen name="txt_tituloReporte_marginTop">15dp</dimen>
+    <dimen name="marginTopImgLogo">40dp</dimen>
 
 
 </resources>

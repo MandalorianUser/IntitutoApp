@@ -22,7 +22,7 @@
 
     //TEXT INPUTS
     <dimen name="margin_txt_input">10dp</dimen>
-    <dimen name="txt_inputs">12sp</dimen>
+    <dimen name="fontZize_txtInput">12sp</dimen>
 
     <dimen name="txt_heigth">20dp</dimen>
     <dimen name="item_Reporte_heigth">120dp</dimen>
@@ -36,6 +36,7 @@
     <dimen name="targetEscolaridad_imgWidth">150dp</dimen>
     <dimen name="targetEscolaridad_imgHeigth">150dp</dimen>
     <dimen name="formRegistromarginBottom">75dp</dimen>
+    <dimen name="marginTopImgLogo">40dp</dimen>
 
 
 </resources>
